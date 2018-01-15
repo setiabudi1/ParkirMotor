@@ -1,0 +1,1 @@
+var parkirApp = angular.module('ParkirApp', []);

@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Daftar Parkir Kendaraan</title>
+
+        <script src="./js/angular.min.js"></script>
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"/>
+
+        <script src="./js/parkir-app.js"></script>
+        <script src="./js/daftar-controller.js"></script>
+    </head>
+    <body class="container" ng-app="ParkirApp">
+        <div class="jumbotron">
+            <h1>Daftar Parkir Kendaraan</h1>
+        </div>
+
+        <div ng-controller="DaftarController">
+            <table class="table">
+                <thead>
+                    <th>ID</th>
+                    <th>NAMA</th>
+                    <th>NOMOR PLAT</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="parkir in daftarParkir">
+                        <td>{{ parkir.id }}</td>
+                        <td>{{ parkir.nama }}</td>
+                        <td>{{ parkir.plat }}</td>
+                        <td>
+                            <button class="btn btn-warning"
+                                    ng-click="edit(parkir)">
+                                Edit
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger"
+                                    ng-click="hapus(parkir)">
+                                Hapus
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-primary"
+                    ng-click="tambah()">
+                Tambah
+            </button>
+        </div>
+    </body>
+</html>
